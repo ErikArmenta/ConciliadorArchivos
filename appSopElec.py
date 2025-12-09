@@ -75,14 +75,14 @@ if uploaded_files:
         if COLUMNA_FECHA_ORIGEN in df_final.columns:
             # Copia directa como string. Esto evita el problema del año 1900.
             df_final["TIME"] = df_final[COLUMNA_FECHA_ORIGEN]
-            st.success("✅ Punto 1: Columna 'TIME' copiada directamente desde 'FECHA Y HORA' (sin formato).")
+            st.success("✅ Punto 1: Formatear Fechas y automatización completada")
 
         ### 3) Aplicar fórmula a la columna 'DECIMAL'
         required_cols_calc = ["VALOR_FUGA", "EXPONENCIAL"]
         if all(col in df_final.columns for col in required_cols_calc):
             # Solución: Usamos 10.0 en lugar de 10 para evitar el error de potencias negativas.
             df_final["DECIMAL"] = df_final["VALOR_FUGA"] * (10.0 ** df_final["EXPONENCIAL"])
-            st.success("✅ Punto 3: Cálculo de la columna 'DECIMAL' aplicado.")
+            st.success("✅ Punto 3: Cálculo de la formula aplicado con exito")
         else:
             st.error("❌ Error: Faltan las columnas VALOR_FUGA o EXPONENCIAL.")
 
