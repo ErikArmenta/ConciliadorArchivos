@@ -10,9 +10,19 @@ import streamlit as st
 import pandas as pd
 import io
 
+# Configuración de la página
+st.set_page_config(
+    page_title="Aplicación de automatizaciones",
+    page_icon="📁",
+    layout="wide"
+)
+
+
 # Configuración de página para mejor visualización
 st.set_page_config(layout="wide")
 st.title("📁 Consolidador de CSV de Máquina (por fecha y análisis)")
+st.caption("Aplicación consolidador de archivos | Developed by Master Engineer Erik Armenta")
+
 
 uploaded_files = st.file_uploader(
     "Arrastra aquí tus CSV",
@@ -140,3 +150,4 @@ if uploaded_files:
             file_name="datos_consolidados_analisis.xlsx",
             mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
         )
+
